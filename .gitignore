@@ -1,0 +1,5 @@
+.vs
+*.user
+[Oo]bj/
+[Bb]in/
+node_modules

@@ -1,0 +1,248 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+
+/*Index*/
+.intro-texts{
+    text-align: center;
+}
+
+div.play-button{
+    text-align: center;
+}
+
+.play-button button {
+    margin-top: 20px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    border: none;
+    width: 170px;
+    height: 35px;
+    outline: none;
+}
+
+.play-button button:active {
+    background: grey;
+}
+
+div.how-to-play-button {
+    text-align: center;
+}
+
+.how-to-play-button button {
+    margin-top: 10px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    border: none;
+    width: 170px;
+    height: 35px;
+    outline: none;
+}
+
+.how-to-play-button button:active {
+    background: grey;
+}
+
+div.tic-tac-toe-img {
+    text-align: center;
+}
+
+.tic-tac-toe-img img {
+    width: 270px;
+    height: 270px;
+    margin-bottom: 30px;
+}
+
+
+/*Play*/
+table.board {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td.board-cell {
+    width: 150px;
+    height: 150px;
+}
+
+td.board-cell-border {
+    width: 150px;
+    height: 150px;
+    border-right: 15px solid black;
+}
+
+tr.board-row-boarder {
+    border-right: 15px solid black;
+}
+
+.marker-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.reset-game-button {
+    text-align: center;
+}
+
+.reset-game-button button {
+    margin-top: 20px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    border: none;
+    width: 170px;
+    height: 35px;
+    outline: none;
+}
+
+.reset-game-button button:active {
+    background: grey;
+}
+
+.rotate {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    transition: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+
+div.difficulty-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+button.difficulty-button {
+    margin: 30px 10px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    border: none;
+    width: 100px;
+    height: 35px;
+    outline: none;
+}
+
+button.play-button:active {
+    background: grey;
+}
+
+button.selected {
+    border: 4px solid black !important;
+    background: white !important;
+    font-weight: 600;
+    color: black !important;
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    flex-direction: column;
+}
+
+div.leave-queue-button {
+    text-align: center;
+}
+
+.leave-queue-button button {
+    margin-top: 20px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    border: none;
+    width: 170px;
+    height: 35px;
+    outline: none;
+}
+
+.leave-queue-button button:active {
+    background: grey;
+}
+
+.queue-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.turn-text {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+}

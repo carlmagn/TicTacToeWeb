@@ -1,0 +1,22 @@
+﻿<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/signalr/signalr.js"></script>
+    <script src="~/js/signalr.js"></script>
+    <script src="~/js/playagainstplayer.js"></script>
+</head>
+<body>
+    <div class="loader-container" style="display: none;">
+        <img class="loader" src="~/img/double-ring-loader.gif" />
+        <span class="queue-text">Finding opponent</span>
+        <div class="leave-queue-button">
+            <button onclick="leaveQueue()">Leave</button>
+        </div>
+    </div>
+    <div class="game-container" style="display: none;">
+        <partial name="~/Views/Play/Board.cshtml"/>
+        <div class="turn-text" >
+            <span id="your-turn" style="display: none;">Your turn</span>
+            <span id="opponents-turn" style="display: none;">Opponents turn</span>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,18 @@
+﻿<h1>PlayAgainstComputer</h1>
+<head>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/minimax.js"></script>
+    <script type="text/javascript" src="~/js/playagainstcomputer.js"></script>
+</head>
+<body>
+    <div class="difficulty-buttons-container">
+        <button id="easy" type="button" class="difficulty-button" onclick="selectDifficulty(this.id)">Easy</button>
+        <button id="medium" type="button" class="difficulty-button selected" onclick="selectDifficulty(this.id)">Medium</button>
+        <button id="hard" type="button" class="difficulty-button" onclick="selectDifficulty(this.id)">Hard</button>
+        <button id="carl" type="button" class="difficulty-button" onclick="selectDifficulty(this.id)">Carl</button>
+    </div>
+    <partial name="~/Views/Play/Board.cshtml" />
+    <div class="reset-game-button">
+        <button type="button" onclick="resetGame()">Reset</button>
+    </div>
+</body>
