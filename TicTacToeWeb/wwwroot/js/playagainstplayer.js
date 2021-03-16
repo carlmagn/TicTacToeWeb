@@ -24,22 +24,16 @@ function makeMove(player, move) {
 function setPlayerTurn(isMyTurn) {
     this.isMyTurn = isMyTurn;
 
-    showPlayerTurn();
+    setStatusText(isMyTurn ? 'Your turn' : 'Opponents turn');
 }
 
-function showPlayerTurn() {
-    if (isMyTurn) {
-        $('#your-turn').show();
-        $('#opponents-turn').hide();
-    } else {
-        $('#your-turn').hide();
-        $('#opponents-turn').show();
-    }
+function setStatusText(text) {
+    $('#status-text').text(text);
 }
 
 function switchPlayer() {
     isMyTurn = !isMyTurn;
-    showPlayerTurn();
+    setStatusText(isMyTurn ? 'Your turn' : 'Opponents turn');
 }
 
 // Fix wincondition

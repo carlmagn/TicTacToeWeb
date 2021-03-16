@@ -71,12 +71,16 @@ connection.on("ReceiveMove", (player, move) => {
     makeMove(player, move);
 });
 
-connection.on("Won", () => {
-    console.log('Who won bro?');
+connection.on("Won", (playerMarker, winningRow) => {
+    animateWinningRow(playerMarker, winningRow);
+    setStatusText('You won!');
+});
+
+connection.on("Lost", (playerMarker, winningRow) => {
+    animateWinningRow(playerMarker, winningRow);
+    setStatusText('You lost!');
 });
 
 connection.on("Draw", () => {
-    console.log('Only losers here');
+    setStatusText('Draw!');
 });
-
-//test
