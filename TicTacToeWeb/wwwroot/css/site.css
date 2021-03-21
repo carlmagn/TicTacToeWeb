@@ -70,6 +70,20 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
+/*Header*/
+a.header-container {
+    display: flex; 
+}
+
+.header-img {
+    height: 30px;
+}
+
+.header-text {
+    font-weight: 600;
+    margin: auto;
+}
+
 /*Common*/
 div.default-button {
     text-align: center;
@@ -105,8 +119,8 @@ div.tic-tac-toe-img {
     margin-bottom: 30px;
 }
 
-.default-button .intro-buttons button {
-    margin-top: 10px;
+.intro-button button {
+    margin-top: 10px !important;
 }
 
 /*Play*/

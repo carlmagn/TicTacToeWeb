@@ -8,6 +8,10 @@ using static TicTacToeWeb.Models.Game;
 
 namespace TicTacToeWeb
 {
+    /// <summary>
+    /// Handles matchmaking and communication between the two players. 
+    /// Based on https://github.com/splttingatms/TicTacToe.
+    /// </summary>
     public class PlayHub : Hub
     {
         public static IDictionary<Game, Player[]> currentGames = new Dictionary<Game, Player[]>();

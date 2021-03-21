@@ -23,11 +23,6 @@ namespace TicTacToeWeb.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -40,12 +35,12 @@ namespace TicTacToeWeb.Controllers
 /*TODO: 
 
     fixa runda kanter på boarden
-    2 players signalR https://github.com/splttingatms/TicTacToe
     minimax / when 2 winning rows in next step, doesnt block either.
-    fixa header/footer
+    fixa footer
     rotate image instead of td on winning row. make it 180 deg instead 
     refactor animateWinningRow to be called from if (checkWin()){}
     bestäm vem som börjar (kanske)
+    Gör något för how to play
     Fixa mobil
     docker
     jenkins
