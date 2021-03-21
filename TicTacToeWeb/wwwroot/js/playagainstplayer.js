@@ -18,7 +18,6 @@ function showLoader() {
 function makeMove(player, move) {
     $(`#${move}`).html(`<img src="/img/TicTacToe${player}.png" class="marker-img"/>`);
     board[move] = player;
-    switchPlayer();
 }
 
 function setPlayerTurn(isMyTurn) {

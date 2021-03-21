@@ -122,6 +122,7 @@ namespace TicTacToeWeb
                     break;
                 case GameState.Ongoing:
                     game.SwitchPlayer();
+                    await Clients.Group(game.GameId).SendAsync("Ongoing");
                     break;
             }
         }

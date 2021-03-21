@@ -84,3 +84,7 @@ connection.on("Lost", (playerMarker, winningRow) => {
 connection.on("Draw", () => {
     setStatusText('Draw!');
 });
+
+connection.on("Ongoing", () => {
+    switchPlayer();
+});
