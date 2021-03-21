@@ -51,6 +51,4 @@ namespace TicTacToeWeb.Controllers
     jenkins
     terraform azure
     Storlekar på mobil spelplan och ev. annat
-    Testa om man kan spela flera games?
-    Byta till default knapp klass
 */

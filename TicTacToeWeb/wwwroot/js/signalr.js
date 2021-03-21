@@ -64,7 +64,7 @@ connection.on("LeftQueue", () => {
 });
 
 connection.on("OpponentDisconnected", () => {
-    console.log('Opponent disconnected');
+    setStatusText('Opponent left')
 });
 
 connection.on("ReceiveMove", (player, move) => {
