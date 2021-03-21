@@ -70,17 +70,12 @@ body {
   line-height: 60px; /* Vertically center the text there */
 }
 
-
-/*Index*/
-.intro-texts{
+/*Common*/
+div.default-button {
     text-align: center;
 }
 
-div.play-button{
-    text-align: center;
-}
-
-.play-button button {
+.default-button button{
     margin-top: 20px;
     border-radius: 25px;
     background: black;
@@ -91,27 +86,13 @@ div.play-button{
     outline: none;
 }
 
-.play-button button:active {
+.default-button button:active {
     background: grey;
 }
 
-div.how-to-play-button {
+/*Index*/
+.intro-texts{
     text-align: center;
-}
-
-.how-to-play-button button {
-    margin-top: 10px;
-    border-radius: 25px;
-    background: black;
-    color: white;
-    border: none;
-    width: 170px;
-    height: 35px;
-    outline: none;
-}
-
-.how-to-play-button button:active {
-    background: grey;
 }
 
 div.tic-tac-toe-img {
@@ -122,6 +103,10 @@ div.tic-tac-toe-img {
     width: 270px;
     height: 270px;
     margin-bottom: 30px;
+}
+
+.default-button .intro-buttons button {
+    margin-top: 10px;
 }
 
 
@@ -152,25 +137,6 @@ tr.board-row-boarder {
     margin-right: auto;
 }
 
-div.reset-game-button {
-    text-align: center;
-}
-
-.reset-game-button button {
-    margin-top: 20px;
-    border-radius: 25px;
-    background: black;
-    color: white;
-    border: none;
-    width: 170px;
-    height: 35px;
-    outline: none;
-}
-
-.reset-game-button button:active {
-    background: grey;
-}
-
 .rotate {
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -196,10 +162,6 @@ button.difficulty-button {
     outline: none;
 }
 
-button.play-button:active {
-    background: grey;
-}
-
 button.selected {
     border: 4px solid black !important;
     background: white !important;
@@ -213,25 +175,6 @@ button.selected {
     align-items: center;
     height: 70vh;
     flex-direction: column;
-}
-
-div.leave-queue-button {
-    text-align: center;
-}
-
-.leave-queue-button button {
-    margin-top: 20px;
-    border-radius: 25px;
-    background: black;
-    color: white;
-    border: none;
-    width: 170px;
-    height: 35px;
-    outline: none;
-}
-
-.leave-queue-button button:active {
-    background: grey;
 }
 
 .queue-text {
