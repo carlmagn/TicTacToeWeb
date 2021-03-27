@@ -133,11 +133,23 @@ td.board-cell {
     width: 150px;
     height: 150px;
 }
+@media (max-width: 480px){
+    td.board-cell {
+        width: 110px;
+        height: 110px;
+    }
+}
 
 td.board-cell-border {
     width: 150px;
     height: 150px;
     border-right: 15px solid black;
+}
+@media (max-width: 480px){
+    td.board-cell-border {
+        width: 110px;
+        height: 110px;
+    }
 }
 
 tr.board-row-boarder {
@@ -149,6 +161,12 @@ tr.board-row-boarder {
     margin-left: auto;
     margin-right: auto;
 }
+@media (max-width: 480px){
+    .marker-img {
+        width: 90px;
+        height: 90px;
+    }
+}
 
 .rotate {
     -webkit-transform: rotate(360deg);
@@ -159,13 +177,23 @@ tr.board-row-boarder {
     transition-timing-function: ease-in-out;
 }
 
+.difficulty-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    border-bottom: 2px solid black;
+    max-width: 500px;
+    margin: auto;
+    padding-bottom: 3px;
+}
+
 div.difficulty-buttons-container {
     display: flex;
     justify-content: center;
 }
 
 button.difficulty-button {
-    margin: 30px 10px;
+    margin: 10px 10px 40px 10px;
     border-radius: 25px;
     background: black;
     color: white;
@@ -173,6 +201,13 @@ button.difficulty-button {
     width: 100px;
     height: 35px;
     outline: none;
+
+}
+@media (max-width: 480px){
+    button.difficulty-button {
+        margin: 10px 3px 40px 3px;
+        width: 80px;
+    }
 }
 
 button.selected {
