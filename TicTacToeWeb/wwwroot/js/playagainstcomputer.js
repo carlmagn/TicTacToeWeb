@@ -18,13 +18,13 @@ function putPlayerMarker(id) {
     }
     makeMove('X', id)
 
-    if (checkPlayerWinWithAnimation('X')) {
+    var { player, playerHasWon, winningRow } = checkWinningState('X');
+    if (playerHasWon) {
+        animateWinningRow(player, winningRow)
         gameOver = true;
-        console.log('X won');
     }
     else if (checkDraw()) {
         gameOver = true;
-        console.log('Draw');
     }
     else {
         putComputerMarker();
@@ -32,27 +32,19 @@ function putPlayerMarker(id) {
 }
 
 function putComputerMarker() {
-    //var move = findMove();
     var move = minimax(board, 0, true);
-    console.log(nodeMap);
     makeMove('O', move)
 
-    if (checkPlayerWinWithAnimation('O')) {
+    var { player, playerHasWon, winningRow } = checkWinningState('O');
+    if (playerHasWon) {
+        animateWinningRow(player, winningRow)
         gameOver = true;
-        console.log('O won');
     }
     else if (checkDraw()) {
         gameOver = true;
-        console.log('Draw');
     }
 
     return;
-}
-
-function findMove() {
-    if (board[i] === '') {
-        return i;
-    }
 }
 
 function makeMove(player, move) {
@@ -60,46 +52,38 @@ function makeMove(player, move) {
     board[move] = player;
 }
 
-function checkPlayerWinWithAnimation(player) {
+function checkWinningState(player) {
     //Horizontal wins
     if (board[0] == player && board[1] == player && board[2] == player) {
-        animateWinningRow(player, [0, 1, 2]);
-        return true;
+        return {player: player,  playerHasWon: true, winningRow: [0, 1, 2]};
     };
     if (board[3] == player && board[4] == player && board[5] == player) {
-        animateWinningRow(player, [3, 4, 5]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [3, 4, 5] };
     };
     if (board[6] == player && board[7] == player && board[8] == player) {
-        animateWinningRow(player, [6, 7, 8]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [6, 7, 8] };
     };
 
     //Vertical wins
     if (board[0] == player && board[3] == player && board[6] == player) {
-        animateWinningRow(player, [0, 3, 6]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [0, 3, 6] };
     };
     if (board[1] == player && board[4] == player && board[7] == player) {
-        animateWinningRow(player, [1, 4, 7]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [1, 4, 7] };
     };
     if (board[2] == player && board[5] == player && board[8] == player) {
-        animateWinningRow(player, [2, 5, 8]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [2, 5, 8] };
     };
 
     //Diagonal wins
     if (board[0] == player && board[4] == player && board[8] == player) {
-        animateWinningRow(player, [0, 4, 8]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [0, 4, 8] };
     };
     if (board[6] == player && board[4] == player && board[2] == player) {
-        animateWinningRow(player, [6, 4, 2]);
-        return true;
+        return { player: player, playerHasWon: true, winningRow: [6, 4, 2] };
     };
 
-    return false;
+    return { playerHasWon: false };
 }
 
 function checkDraw() {
@@ -122,9 +106,9 @@ function resetGame() {
 }
 
 function animateWinningRow(player, winningRow) {
-    player === 'X' ?
-        $(`#${winningRow[0]}, #${winningRow[1]}, #${winningRow[2]}`).addClass('rotate') :
-        $(`#${winningRow[0]}, #${winningRow[1]}, #${winningRow[2]}`).fadeOut(150).fadeIn(150).fadeOut(150).fadeIn(150);
+    player === 'X'
+        ? $(`#${winningRow[0]}, #${winningRow[1]}, #${winningRow[2]}`).addClass('rotate')
+        : $(`#${winningRow[0]}, #${winningRow[1]}, #${winningRow[2]}`).fadeOut(150).fadeIn(150).fadeOut(150).fadeIn(150);
 }
 
 function selectDifficulty(difficulty) {

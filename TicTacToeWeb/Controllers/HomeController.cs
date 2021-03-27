@@ -34,12 +34,10 @@ namespace TicTacToeWeb.Controllers
 
 /*TODO: 
 
-    skapa favicon med titel för sidan i tab
     fixa runda kanter på boarden
     minimax / when 2 winning rows in next step, doesnt block either.
     fixa footer - about page instead of privacy?
     rotate image instead of td on winning row. make it 180 deg instead 
-    refactor animateWinningRow to be called from if (checkWin()){}
     bestäm vem som börjar (kanske)
     Gör något för how to play
     Fixa mobil
