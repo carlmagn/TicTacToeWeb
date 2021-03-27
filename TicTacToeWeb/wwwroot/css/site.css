@@ -120,7 +120,7 @@ div.tic-tac-toe-img {
 }
 
 .intro-button button {
-    margin-top: 10px !important;
+    margin-top: 10px;
 }
 
 /*Play*/
@@ -176,10 +176,10 @@ button.difficulty-button {
 }
 
 button.selected {
-    border: 4px solid black !important;
-    background: white !important;
+    border: 4px solid black;
+    background: white;
     font-weight: 600;
-    color: black !important;
+    color: black;
 }
 
 .loader-container {
