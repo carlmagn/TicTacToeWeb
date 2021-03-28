@@ -35,6 +35,7 @@ function minimax(board, depth, maximizing) {
         if (depth === 0) {
             highestScoringMoves = nodeMap.get(bestScore);
             if (highestScoringMoves.length > 1) {
+                highestScoringMoves = findBlockingMoves(highestScoringMoves, board);
                 let randomIndex = Math.floor(Math.random() * highestScoringMoves.length);
                 return highestScoringMoves[randomIndex];
             } else {
@@ -59,16 +60,6 @@ function minimax(board, depth, maximizing) {
             }
         });
 
-        if (depth === 0) {
-            highestScoringMoves = nodeMap.get(bestScore);
-            if (highestScoringMoves.length > 1) {
-                let randomIndex = Math.floor(Math.random() * highestScoringMoves.length);
-                return highestScoringMoves[randomIndex];
-            } else {
-                return highestScoringMoves[0];
-            }
-        }
-
         return bestScore;
     }
 }
@@ -86,10 +77,12 @@ function getAvailableMoves(board) {
 }
 
 function getScore(depth, board) {
-    let playerXWins = checkPlayerWin('X', board);
-    if (playerXWins) { return -100 + depth }
-    let playerOWins = checkPlayerWin('O', board);
-    if (playerOWins) { return 100 - depth }
+    let playerXHasWon = checkPlayerWin('X', board);
+    if (playerXHasWon) { return -100 + depth }
+
+    let playerOHasWon = checkPlayerWin('O', board);
+    if (playerOHasWon) { return 100 - depth }
+
     return 0;
 }
 
@@ -99,19 +92,32 @@ function checkEndOfGame(board, availableMoves) {
 
 function checkPlayerWin(player, board) {
     //Horizontal wins
-    if (board[0] === player && board[1] === player && board[2] === player) return true;
-    if (board[3] === player && board[4] === player && board[5] === player) return true;
-    if (board[6] === player && board[7] === player && board[8] === player) return true;
+    if (board[0] === player && board[1] === player && board[2] === player) { return true; }
+    if (board[3] === player && board[4] === player && board[5] === player) { return true; }
+    if (board[6] === player && board[7] === player && board[8] === player) { return true; }
 
     //Vertical wins
-    if (board[0] === player && board[3] === player && board[6] === player) return true;
-    if (board[1] === player && board[4] === player && board[7] === player) return true;
-    if (board[2] === player && board[5] === player && board[8] === player) return true;
+    if (board[0] === player && board[3] === player && board[6] === player) { return true; }
+    if (board[1] === player && board[4] === player && board[7] === player) { return true; }
+    if (board[2] === player && board[5] === player && board[8] === player) { return true; }
 
     //Diagonal wins
-    if (board[0] === player && board[4] === player && board[8] === player) return true;
-    if (board[6] === player && board[4] === player && board[2] === player) return true;
+    if (board[0] === player && board[4] === player && board[8] === player) { return true; }
+    if (board[6] === player && board[4] === player && board[2] === player) { return true; }
 
     return false;
 }
 
+function findBlockingMoves(moves, board) {
+    let blockingMoves = [];
+    moves.forEach(move => {
+        let testBoard = board.slice();
+        testBoard[move] = 'X';
+        let playerXHasWon = checkPlayerWin('X', testBoard);
+        if (playerXHasWon) {
+            blockingMoves.push(move);
+        }
+    });
+
+    return blockingMoves.length > 1 ? blockingMoves : moves;
+}
