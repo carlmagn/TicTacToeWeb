@@ -6,7 +6,6 @@ var nodeMap = new Map();
 function minimax(board, depth, maximizing) {
     if (depth === 0) {
         nodeMap.clear();
-        console.log(maxDepth);
     }
     let availableMoves = getAvailableMoves(board);
     let gameHasEnded = checkEndOfGame(board, availableMoves)
