@@ -33,7 +33,6 @@ namespace TicTacToeWeb.Controllers
     fixa runda kanter på boarden
     fixa footer - about page instead of privacy?
     bestäm vem som börjar (kanske)
-    Gör något för how to play
     Fixa mobil
     docker
     jenkins

@@ -123,6 +123,56 @@ div.tic-tac-toe-img {
     margin-top: 10px;
 }
 
+.popup-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    border: solid 5px black;
+    border-radius: 10px;
+    margin-top: 15px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 32px;
+}
+
+.popup-container::after {
+    content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 12px solid transparent;
+	border-bottom-color: black;
+	border-top: 0;
+	margin-left: -12px;
+	margin-top: -12px;
+}
+
+#how-to-play-text {
+    overflow-wrap: break-word;
+    word-break: break-word;
+    word-wrap: break-word;
+}
+
+.how-to-play-text-container {
+    margin-bottom: 0px;
+    font-weight: 500;
+}
+
+.close-button:hover{
+    cursor: pointer;
+}
+
+.close-img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
 /*Play*/
 table.board {
     margin-left: auto;
