@@ -24,6 +24,11 @@ namespace TicTacToeWeb.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult About()
+        {
+            return View();
+        }
     }
 }
 
@@ -31,7 +36,6 @@ namespace TicTacToeWeb.Controllers
 /*TODO: 
 
     fixa runda kanter på boarden
-    fixa footer - about page instead of privacy?
     bestäm vem som börjar (kanske)
     Fixa mobil
     docker
