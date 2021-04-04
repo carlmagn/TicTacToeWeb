@@ -37,7 +37,6 @@ namespace TicTacToeWeb.Controllers
 
     reset game and change starting player PvP with score
     Fixa mobil
-    docker
     jenkins
     terraform azure
 */
