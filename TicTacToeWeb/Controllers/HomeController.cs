@@ -35,8 +35,7 @@ namespace TicTacToeWeb.Controllers
 
 /*TODO: 
 
-    fixa runda kanter på boarden
-    bestäm vem som börjar (kanske)
+    reset game and change starting player PvP with score
     Fixa mobil
     docker
     jenkins

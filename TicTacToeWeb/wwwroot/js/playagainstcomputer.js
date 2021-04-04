@@ -5,6 +5,8 @@
 
 var board = ['', '', '', '', '', '', '', '', '']
 var gameOver = false;
+var computerGoesFirst = false;
+
 
 $(function () {
     $('td').click(function () { putPlayerMarker(this.id) });
@@ -102,7 +104,12 @@ function resetGame() {
     $('.marker-img').remove();
     $('td').removeClass('rotate');
 
+    computerGoesFirst = !computerGoesFirst;
     gameOver = false;
+
+    if (computerGoesFirst) {
+        putComputerMarker();
+    }
 }
 
 function animateWinningRow(player, winningRow) {
@@ -126,7 +133,7 @@ function selectDifficulty(difficulty) {
             maxDepth = 5;
             break;
         case 'carl':
-            maxDepth = 7;
+            maxDepth = 9;
             break;
         default:
             maxDepth = 3;
