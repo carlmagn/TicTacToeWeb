@@ -36,7 +36,6 @@ namespace TicTacToeWeb.Controllers
 /*TODO: 
 
     reset game and change starting player PvP with score
-    checkWin in Gameobject should return winning row aswell
     property accesibility
     Fixa mobil
     jenkins

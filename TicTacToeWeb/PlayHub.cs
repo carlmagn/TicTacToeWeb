@@ -110,15 +110,15 @@ namespace TicTacToeWeb
 
         private async Task UpdateGameState(Game game, Player player)
         {
-            var gameState = game.CheckGameState(player.playerMarker);
+            var (gameState, winningRow) = game.CheckGameState(player.playerMarker);
 
             switch (gameState)
             {
                 case GameState.Win:
                     var opponentId = game.Player1.playerId == player.playerId ? game.Player2.playerId : game.Player1.playerId;
                     game.IsGameOver = true;
-                    await Clients.Client(player.playerId).SendAsync("Won", player.playerMarker, game.WinningRow);
-                    await Clients.Client(opponentId).SendAsync("Lost", player.playerMarker, game.WinningRow);
+                    await Clients.Client(player.playerId).SendAsync("Won", player.playerMarker, winningRow);
+                    await Clients.Client(opponentId).SendAsync("Lost", player.playerMarker, winningRow);
                     await ResetGame(game);
                     break;
                 case GameState.Draw:

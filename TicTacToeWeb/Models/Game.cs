@@ -69,31 +69,31 @@ namespace TicTacToeWeb.Models
         /// Checks the gamestate for wins and draws and returns a <value name="GameState"/> enum depending on the result.
         /// </summary>
         /// <returns>
-        /// * <value name="GameState.Win"/> if <paramref name="_currentPlayer"> has won.
+        /// * <value name="GameState.Win"/> with the corresponding WinningRow as an array of integers, if <paramref name="playerMarker"> has won.
         /// * <value name="GameState.Draw"/> if all spaces on the Board is filled and noone won.
         /// * <value name="GameState.Ongoing"/> otherwise.
         /// </returns>
-        public GameState CheckGameState(string playerMarker)
+        public (GameState gameState, int[] winningRow) CheckGameState(string playerMarker)
         {
             //Checks vertical wins
-            if (Board.BoardState[0] == playerMarker && Board.BoardState[1] == playerMarker && Board.BoardState[2] == playerMarker) { WinningRow = new int[] { 0, 1, 2 }; return GameState.Win; };
-            if (Board.BoardState[3] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[5] == playerMarker) { WinningRow = new int[] { 3, 4, 5 }; return GameState.Win; };
-            if (Board.BoardState[6] == playerMarker && Board.BoardState[7] == playerMarker && Board.BoardState[8] == playerMarker) { WinningRow = new int[] { 6, 7, 8 }; return GameState.Win; };
+            if (Board.BoardState[0] == playerMarker && Board.BoardState[1] == playerMarker && Board.BoardState[2] == playerMarker) { return (GameState.Win, new int[] { 0, 1, 2 }); };
+            if (Board.BoardState[3] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[5] == playerMarker) { return (GameState.Win, new int[] { 3, 4, 5 }); };
+            if (Board.BoardState[6] == playerMarker && Board.BoardState[7] == playerMarker && Board.BoardState[8] == playerMarker) { return (GameState.Win, new int[] { 6, 7, 8 }); };
 
             //Checks horizontal wins
-            if (Board.BoardState[0] == playerMarker && Board.BoardState[3] == playerMarker && Board.BoardState[6] == playerMarker) { WinningRow = new int[] { 0, 3, 6 }; return GameState.Win; };
-            if (Board.BoardState[1] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[7] == playerMarker) { WinningRow = new int[] { 1, 4, 7 }; return GameState.Win; };
-            if (Board.BoardState[2] == playerMarker && Board.BoardState[5] == playerMarker && Board.BoardState[8] == playerMarker) { WinningRow = new int[] { 2, 5, 8 }; return GameState.Win; };
+            if (Board.BoardState[0] == playerMarker && Board.BoardState[3] == playerMarker && Board.BoardState[6] == playerMarker) { return (GameState.Win, new int[] { 0, 3, 6 }); };
+            if (Board.BoardState[1] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[7] == playerMarker) { return (GameState.Win, new int[] { 1, 4, 7 }); };
+            if (Board.BoardState[2] == playerMarker && Board.BoardState[5] == playerMarker && Board.BoardState[8] == playerMarker) { return (GameState.Win, new int[] { 2, 5, 8 }); };
 
             //Checks diagonal wins
-            if (Board.BoardState[0] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[8] == playerMarker) { WinningRow = new int[] { 0, 4, 8 }; return GameState.Win; };
-            if (Board.BoardState[6] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[2] == playerMarker) { WinningRow = new int[] { 6, 4, 2 }; return GameState.Win; };
+            if (Board.BoardState[0] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[8] == playerMarker) { return (GameState.Win, new int[] { 0, 4, 8 }); };
+            if (Board.BoardState[6] == playerMarker && Board.BoardState[4] == playerMarker && Board.BoardState[2] == playerMarker) { return (GameState.Win, new int[] { 6, 4, 2 }); };
 
             //Check for draws
             var isDrawGameState = CheckDrawGameState();
-            if (isDrawGameState) { return GameState.Draw; }
+            if (isDrawGameState) { return (GameState.Draw, null); };
 
-            return GameState.Ongoing;
+            return (GameState.Ongoing, null);
         }
 
         public void ResetGame()
