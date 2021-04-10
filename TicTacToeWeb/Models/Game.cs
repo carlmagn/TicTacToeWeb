@@ -55,11 +55,6 @@ namespace TicTacToeWeb.Models
         /// </summary>
         public bool IsGameOver { get; set; } = false;
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public int[] WinningRow { get; set; }
-
         public void SwitchPlayer()
         {
             IsPlayer1sTurn = !IsPlayer1sTurn;

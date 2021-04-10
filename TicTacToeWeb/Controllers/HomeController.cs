@@ -35,9 +35,6 @@ namespace TicTacToeWeb.Controllers
 
 /*TODO: 
 
-    reset game and change starting player PvP with score
-    property accesibility
-    Fixa mobil
     jenkins
     terraform azure
 */
