@@ -290,10 +290,31 @@ button.selected {
 .turn-text {
     font-size: 24px;
     font-weight: 600;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .default-button.reset-game button{
     margin-top: 40px;
+}
+
+.score-board {
+    display: flex;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    max-width: 400px;
+}
+
+.score-board-cell {
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+}
+
+.game-container {
+    margin-top: 32px;
 }
