@@ -1,5 +1,6 @@
 ﻿var board = ['', '', '', '', '', '', '', '', '']
 var isMyTurn;
+var didStart;
 
 $(function () {
     $('td').click(function () { sendMove(this.id) });
@@ -22,7 +23,40 @@ function makeMove(player, move) {
 
 function setPlayerTurn(isMyTurn) {
     this.isMyTurn = isMyTurn;
+    this.didStart = isMyTurn;
 
+    setStatusText(isMyTurn ? 'Your turn' : 'Opponents turn');
+}
+
+function playerWon() {
+    setStatusText('You won!');
+
+    let score = parseInt($('#player-score').text());
+    $('#player-score').text(++score);
+}
+
+function playerLost() {
+    setStatusText('You lost!');
+
+    let score = parseInt($('#opponent-score').text());
+    $('#opponent-score').text(++score);
+}
+
+function playersTied() {
+    setStatusText('Tied!');
+
+    let score = parseInt($('#tie-score').text());
+    $('#tie-score').text(++score);
+}
+
+function resetGame() {
+    board = ['', '', '', '', '', '', '', '', '']
+
+    $('.marker-img').remove();
+    $('td').removeClass('rotate');
+
+    isMyTurn = !didStart;
+    didStart = !didStart;
     setStatusText(isMyTurn ? 'Your turn' : 'Opponents turn');
 }
 

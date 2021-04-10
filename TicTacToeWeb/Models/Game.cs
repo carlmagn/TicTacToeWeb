@@ -41,9 +41,14 @@ namespace TicTacToeWeb.Models
         public Board Board { get; set; }
 
         /// <summary>
-        /// A boolean indicating whether or not it is player1s turn to make a move or not.
+        /// A boolean indicating whether or not it is player1s turn to make a move.
         /// </summary>
         public bool IsPlayer1sTurn { get; set; } = true;
+
+        /// <summary>
+        /// A boolean indicating whether or not player1 started.
+        /// </summary>
+        public bool didPlayer1Start { get; set; } = true;
 
         /// <summary>
         /// A boolean indicating wheter the game is over or not
@@ -89,6 +94,15 @@ namespace TicTacToeWeb.Models
             if (isDrawGameState) { return GameState.Draw; }
 
             return GameState.Ongoing;
+        }
+
+        public void ResetGame()
+        {
+            IsGameOver = false;
+            Board = new Board();
+
+            IsPlayer1sTurn = !didPlayer1Start;
+            didPlayer1Start = !didPlayer1Start;
         }
 
         /// <summary>

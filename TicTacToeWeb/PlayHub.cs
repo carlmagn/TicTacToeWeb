@@ -119,16 +119,25 @@ namespace TicTacToeWeb
                     game.IsGameOver = true;
                     await Clients.Client(player.playerId).SendAsync("Won", player.playerMarker, game.WinningRow);
                     await Clients.Client(opponentId).SendAsync("Lost", player.playerMarker, game.WinningRow);
+                    await ResetGame(game);
                     break;
                 case GameState.Draw:
                     game.IsGameOver = true;
                     await Clients.Group(game.GameId).SendAsync("Draw");
+                    await ResetGame(game);
                     break;
                 case GameState.Ongoing:
                     game.SwitchPlayer();
                     await Clients.Group(game.GameId).SendAsync("Ongoing");
                     break;
             }
+        }
+
+        private async Task ResetGame(Game game)
+        {
+            await Task.Delay(3000);
+            game.ResetGame();
+            await Clients.Group(game.GameId).SendAsync("ResetGame");
         }
 
         private bool CheckPlayersTurn(string playerId, Game game)

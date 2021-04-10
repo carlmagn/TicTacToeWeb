@@ -73,18 +73,22 @@ connection.on("ReceiveMove", (player, move) => {
 
 connection.on("Won", (playerMarker, winningRow) => {
     animateWinningRow(playerMarker, winningRow);
-    setStatusText('You won!');
+    playerWon();
 });
 
 connection.on("Lost", (playerMarker, winningRow) => {
     animateWinningRow(playerMarker, winningRow);
-    setStatusText('You lost!');
+    playerLost();
 });
 
 connection.on("Draw", () => {
-    setStatusText('Draw!');
+    playersTied();
 });
 
 connection.on("Ongoing", () => {
     switchPlayer();
+});
+
+connection.on("ResetGame", () => {
+    resetGame();
 });
