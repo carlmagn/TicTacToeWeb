@@ -5,6 +5,7 @@ Player versus player is orchestrated with signalR.
 ![TicTacToeDemo](https://user-images.githubusercontent.com/36626379/114819851-6348e200-9dbe-11eb-9e16-1305729fbd4c.gif)
 as mp4: https://user-images.githubusercontent.com/36626379/114818095-727a6080-9dbb-11eb-8206-c473fb2e8df3.mp4
 <br />
+<br />
 
 ## Setup
 The website can be run in iisexpress directly in visual studio or you can run it as a docker container.
@@ -26,26 +27,26 @@ The website can be run in iisexpress directly in visual studio or you can run it
 ## Demo Pictures
 Small demo of the pages in this project and their design.
 
-<img width="500px" src="./ReadmePictures/HomeScreen.PNG">
+<img width="500px" src="./DemoContent/HomeScreen.PNG">
 <p>Picture: Homescreen</p>
 <br />
 <br />
 
-<img width="500px" src="./ReadmePictures/PlayAgainstComputer.PNG">
+<img width="500px" src="./DemoContent/PlayAgainstComputer.PNG">
 <p>Picture: PlayAgainstComputer</p>
 <br />
 <br />
 
-<img width="500px" src="./ReadmePictures/Matchmaking.PNG">
+<img width="500px" src="./DemoContent/Matchmaking.PNG">
 <p>Picture: Matchmaking</p>
 <br />
 <br />
 
-<img width="500px" src="./ReadmePictures/PlayAgainstPlayer.PNG">
+<img width="500px" src="./DemoContent/PlayAgainstPlayer.PNG">
 <p>Picture: PlayAgainstPlayer</p>
 <br />
 <br />
 
-<img src="./ReadmePictures/MobileView.PNG">
+<img src="./DemoContent/MobileView.PNG">
 <p>Picture: MobileView</p>
 
