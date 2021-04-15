@@ -49,4 +49,3 @@ Small demo of the pages in this project and their design.
 
 <img src="./DemoContent/MobileView.PNG">
 <p>Picture: MobileView</p>
-
