@@ -1,7 +1,7 @@
 ﻿// https://medium.com/@alialaa/tic-tac-toe-with-javascript-es2015-ai-player-with-minimax-algorithm-59f069f46efa
 
-var maxDepth = 3;
-var nodeMap = new Map();
+let maxDepth = 3;
+let nodeMap = new Map();
 
 function minimax(board, depth, maximizing) {
     if (depth === 0) {

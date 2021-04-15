@@ -1,11 +1,6 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-var board = ['', '', '', '', '', '', '', '', '']
-var gameOver = false;
-var computerGoesFirst = false;
+﻿let board = ['', '', '', '', '', '', '', '', '']
+let gameOver = false;
+let computerGoesFirst = false;
 
 
 $(function () {
@@ -20,7 +15,7 @@ function putPlayerMarker(id) {
     }
     makeMove('X', id)
 
-    var { player, playerHasWon, winningRow } = checkWinningState('X');
+    let { player, playerHasWon, winningRow } = checkWinningState('X');
     if (playerHasWon) {
         animateWinningRow(player, winningRow)
         gameOver = true;
@@ -34,10 +29,10 @@ function putPlayerMarker(id) {
 }
 
 function putComputerMarker() {
-    var move = minimax(board, 0, true);
+    let move = minimax(board, 0, true);
     makeMove('O', move)
 
-    var { player, playerHasWon, winningRow } = checkWinningState('O');
+    let { player, playerHasWon, winningRow } = checkWinningState('O');
     if (playerHasWon) {
         animateWinningRow(player, winningRow)
         gameOver = true;

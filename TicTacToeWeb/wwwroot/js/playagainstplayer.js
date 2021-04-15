@@ -1,6 +1,6 @@
-﻿var board = ['', '', '', '', '', '', '', '', '']
-var isMyTurn;
-var didStart;
+﻿let board = ['', '', '', '', '', '', '', '', '']
+let isMyTurn;
+let didStart;
 
 $(function () {
     $('td').click(function () { sendMove(this.id) });
