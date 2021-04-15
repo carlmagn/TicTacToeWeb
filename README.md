@@ -2,10 +2,7 @@
 A website where you can play Tic-Tac-Toe against the computer or against another player. The computer can be played on different difficulties using the minimax algorithm. 
 Player versus player is orchestrated with signalR.
 
-<video width="500" controls>
-  <source src="./ReadmePictures/TicTacToeDemo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://user-images.githubusercontent.com/36626379/114818095-727a6080-9dbb-11eb-8206-c473fb2e8df3.mp4
 <br />
 
 ## Setup
