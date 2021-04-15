@@ -2,12 +2,10 @@
 A website where you can play Tic-Tac-Toe against the computer or against another player. The computer can be played on different difficulties using the minimax algorithm. 
 Player versus player is orchestrated with signalR.
 
-<center>
 <video width="500" controls>
   <source src="./ReadmePictures/TicTacToeDemo.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-</center>
 <br />
 
 ## Setup
@@ -31,29 +29,25 @@ The website can be run in iisexpress directly in visual studio or you can run it
 Small demo of the pages in this project and their design.
 
 <img width="500px" src="./ReadmePictures/HomeScreen.PNG">
-<p class="center-text">Picture: Homescreen</p>
+<p>Picture: Homescreen</p>
 <br />
 <br />
 
 <img width="500px" src="./ReadmePictures/PlayAgainstComputer.PNG">
-<p class="center-text">Picture: PlayAgainstComputer</p>
+<p>Picture: PlayAgainstComputer</p>
 <br />
 <br />
 
 <img width="500px" src="./ReadmePictures/Matchmaking.PNG">
-<p class="center-text">Picture: Matchmaking</p>
+<p>Picture: Matchmaking</p>
 <br />
 <br />
 
 <img width="500px" src="./ReadmePictures/PlayAgainstPlayer.PNG">
-<p class="center-text">Picture: PlayAgainstPlayer</p>
+<p>Picture: PlayAgainstPlayer</p>
 <br />
 <br />
 
 <img src="./ReadmePictures/MobileView.PNG">
-<p class="center-text">Picture: MobileView</p>
+<p>Picture: MobileView</p>
 
-<style>
-.center-text {text-align: center;}
-img {display: block; margin: auto;}
-</style>
