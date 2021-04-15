@@ -30,25 +30,30 @@ The website can be run in iisexpress directly in visual studio or you can run it
 ## Demo Pictures
 Small demo of the pages in this project and their design.
 
-<center><img width="500px" src="./ReadmePictures/HomeScreen.PNG" ...></center>
-<center>*Picture: Homescreen*</center>
+<img width="500px" src="./ReadmePictures/HomeScreen.PNG">
+<p class="center-text">Picture: Homescreen</p>
 <br />
 <br />
 
-<center><img width="500px" src="./ReadmePictures/PlayAgainstComputer.PNG" ...></center>
-<center>*Picture: PlayAgainstComputer*</center>
+<img width="500px" src="./ReadmePictures/PlayAgainstComputer.PNG">
+<p class="center-text">Picture: PlayAgainstComputer</p>
 <br />
 <br />
 
-<center><img width="500px" src="./ReadmePictures/Matchmaking.PNG" ...></center>
-<center>*Picture: Matchmaking*</center>
+<img width="500px" src="./ReadmePictures/Matchmaking.PNG">
+<p class="center-text">Picture: Matchmaking</p>
 <br />
 <br />
 
-<center><img width="500px" src="./ReadmePictures/PlayAgainstPlayer.PNG" ...></center>
-<center>*Picture: PlayAgainstPlayer*</center>
+<img width="500px" src="./ReadmePictures/PlayAgainstPlayer.PNG">
+<p class="center-text">Picture: PlayAgainstPlayer</p>
 <br />
 <br />
 
-<center><img src="./ReadmePictures/MobileView.PNG" ...></center>
-<center>*Picture: MobileView*</center>
+<img src="./ReadmePictures/MobileView.PNG">
+<p class="center-text">Picture: MobileView</p>
+
+<style>
+.center-text {text-align: center;}
+img {display: block; margin: auto;}
+</style>
